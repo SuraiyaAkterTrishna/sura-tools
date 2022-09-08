@@ -10,7 +10,7 @@ const ManageProducts = () => {
       "Are you sure You want to delete this Order?"
     );
     if (proceed) {
-      const url = `http://localhost:5000/tool/${id}`;
+      const url = `https://infinite-crag-41650.herokuapp.com/tool/${id}`;
       fetch(url, {
         method: "DELETE",
       })

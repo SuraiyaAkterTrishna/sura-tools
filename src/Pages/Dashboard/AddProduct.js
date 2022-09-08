@@ -25,7 +25,7 @@ const AddProduct = () => {
         price: data.price,
     }
     // send to database 
-    fetch('http://localhost:5000/tool', {
+    fetch('https://infinite-crag-41650.herokuapp.com/tool', {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
