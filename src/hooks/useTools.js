@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const useTools = () => {
     const [tools, setTools] = useState([]);
     useEffect(() => {
-        fetch('https://thawing-mesa-46610.herokuapp.com/product')
+        fetch('http://localhost:5000/tool')
             .then(res => res.json())
             .then(data => setTools(data));
     }, [])

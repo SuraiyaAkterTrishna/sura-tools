@@ -11,9 +11,8 @@ const Purchase = () => {
   const [product, setProduct] = useState({});
   const quantityRef = useRef();
   const [buttonDisabled, setButtonDisabled] = useState(false);
-  const [purchase, setPurchase] = useState(false);
   useEffect(() => {
-    const url = `https://thawing-mesa-46610.herokuapp.com/product/${id}`;
+    const url = `http://localhost:5000/tool/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
@@ -34,6 +33,7 @@ const Purchase = () => {
       parseInt(min_quantity) > quantity ||
       parseInt(available_quantity) < quantity
     ) {
+      toast.error("Error! Enter valid Order Quantity.");
       setButtonDisabled(true);
     } else {
       setButtonDisabled(false);
@@ -66,7 +66,7 @@ const Purchase = () => {
       address: event.target.address?.value,
     };
     //send data to the server
-    const url = `https://thawing-mesa-46610.herokuapp.com/product/${id}`;
+    const url = `http://localhost:5000/tool/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -76,15 +76,14 @@ const Purchase = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setPurchase(true);
+          toast(`Your Purchase is confirmed!!`);
       });
     // create order
     axios
-      .post("https://thawing-mesa-46610.herokuapp.com/order", order)
+      .post("http://localhost:5000/order", order)
       .then((response) => {
         const { data } = response;
         if (data.insertedId) {
-          toast("Your order is added!");
           event.target.reset();
         }
       });
@@ -203,50 +202,6 @@ const Purchase = () => {
           </div>
         </form>
       </div>
-      {buttonDisabled === true ? (
-        <div className="h-12 w-96 alert alert-error shadow-lg">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="stroke-current flex-shrink-0 h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <span>Error! Enter valid Order Quantity.</span>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
-      {purchase === true ? (
-        <div className="h-20 text-white alert alert-success shadow-lg">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="stroke-current flex-shrink-0 h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <span>Your purchase has been confirmed!</span>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
     </div>
   );
 };

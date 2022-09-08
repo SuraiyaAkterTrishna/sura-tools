@@ -14,46 +14,46 @@ const Service = () => {
         </p>
         <div className="hidden md:block">
         <div className="grid lg:grid-cols-3 md:grid-cols-2">
-          <div class="card w-96 bg-inherit">
-            <figure class="px-10 pt-10">
+          <div className="card w-96 bg-inherit">
+            <figure className="px-10 pt-10">
               <img
                 src="https://www.aloktools.com/wp-content/uploads/2018/05/idea.png"
                 alt=""
-                class=""
+                className=""
               />
             </figure>
-            <div class="card-body items-center text-center">
-              <h2 class="card-title">Expertise & Innovation</h2>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title">Expertise & Innovation</h2>
               <p>
                 Since 1978 we’ve been supplying the highest quality tools to a variety of specialist markets.
               </p>
             </div>
           </div>
-          <div class="card w-96 bg-inherit">
-            <figure class="px-10 pt-10">
+          <div className="card w-96 bg-inherit">
+            <figure className="px-10 pt-10">
               <img
                 src="https://www.aloktools.com/wp-content/uploads/2018/05/quality.png"
                 alt=""
-                class=""
+                className=""
               />
             </figure>
-            <div class="card-body items-center text-center">
-              <h2 class="card-title">Quality</h2>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title">Quality</h2>
               <p>
               We have developed a culture of continuous improvement. We give guarantee against any manufacturing defect.
               </p>
             </div>
           </div>
-          <div class="card w-96 bg-inherit">
-            <figure class="px-10 pt-10">
+          <div className="card w-96 bg-inherit">
+            <figure className="px-10 pt-10">
               <img
                 src="https://www.aloktools.com/wp-content/uploads/2018/05/support.png"
                 alt=""
-                class=""
+                className=""
               />
             </figure>
-            <div class="card-body items-center text-center">
-              <h2 class="card-title">Service & Support</h2>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title">Service & Support</h2>
               <p>
               We have invested heavily to ensure that our products, processes and customer service are second to none.
               </p>

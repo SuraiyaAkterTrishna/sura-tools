@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import auth from "../../firebase.init";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../Shared/Loading";
+import useToken from "../../hooks/useToken";
 
 const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -18,27 +19,32 @@ const SignUp = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
     const [sendEmailVerification, sending, err] = useSendEmailVerification(
       auth
     );
+
+    const [token]  = useToken(user || gUser);
+
     const navigate = useNavigate();
+
     let signInError;
+
   if (loading || gLoading || updating) {
     return <Loading></Loading>;
   }
+
   if (error || gError || uError) {
     signInError = (
       <p>
-        <small className="text-red-600">Error: {error.message}</small>
+        <small className="text-red-600">Error: {error?.message || gError?.message || uError?.message}</small>
       </p>
     );
   }
-  if (user || gUser || updateProfile) {
-    console.log(user || gUser || updateProfile);
-  }
+
   if (err) {
     return (
       <div>
@@ -46,12 +52,14 @@ const SignUp = () => {
       </div>
     );
   }
+
   if (sending) {
     return <Loading></Loading>;
   }
-  if (user || gUser) {
+
+  if (token) {
     navigate('/');
-}
+  }
 
   const onSubmit = async(data) => {
     console.log(data);
@@ -60,6 +68,7 @@ const SignUp = () => {
     await sendEmailVerification();
     alert('Please check you email and Verify your account.');
   };
+
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="card w-96 bg-base-100 shadow-xl">

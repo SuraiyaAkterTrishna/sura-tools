@@ -25,7 +25,7 @@ const BusinessSummary = () => {
             manufacturing & construction, so we know only too well the
             importance of a reliable supplier.
           </p>
-          <button class="btn btn-outline btn-accent text-xl my-5">
+          <button className="btn btn-outline btn-accent text-xl my-5">
             Explore More
           </button>
         </div>
@@ -39,9 +39,9 @@ const BusinessSummary = () => {
             onEnter={() => setCountOn(true)}
             onExit={() => setCountOn(false)}
           >
-            <div class="grid grid-cols-2 lg:grid-cols-4">
-              <div class="stat">
-                <div class="stat-value text-accent text-4xl lg:text-6xl">
+            <div className="grid grid-cols-2 lg:grid-cols-4">
+              <div className="stat">
+                <div className="stat-value text-accent text-4xl lg:text-6xl">
                   {countOn && (
                     <CountUp
                       start={0}
@@ -58,11 +58,11 @@ const BusinessSummary = () => {
                     </CountUp>
                   )}
                 </div>
-                <div class="stat-title font-bold text-black">Reviews</div>
+                <div className="stat-title font-bold text-black">Reviews</div>
               </div>
 
-              <div class="stat">
-                <div class="stat-value text-accent text-4xl lg:text-6xl">
+              <div className="stat">
+                <div className="stat-value text-accent text-4xl lg:text-6xl">
                   {countOn && (
                     <CountUp
                       start={0}
@@ -79,13 +79,13 @@ const BusinessSummary = () => {
                     </CountUp>
                   )}
                 </div>
-                <div class="stat-title font-bold text-black">
+                <div className="stat-title font-bold text-black">
                   Years of Operation
                 </div>
               </div>
 
-              <div class="stat">
-                <div class="stat-value text-accent text-4xl lg:text-6xl">
+              <div className="stat">
+                <div className="stat-value text-accent text-4xl lg:text-6xl">
                   {countOn && (
                     <CountUp
                       start={0}
@@ -102,13 +102,13 @@ const BusinessSummary = () => {
                     </CountUp>
                   )}
                 </div>
-                <div class="stat-title font-bold text-black">
+                <div className="stat-title font-bold text-black">
                   On Time Delivery
                 </div>
               </div>
 
-              <div class="stat">
-                <div class="stat-value text-accent text-4xl lg:text-6xl">
+              <div className="stat">
+                <div className="stat-value text-accent text-4xl lg:text-6xl">
                   {countOn && (
                     <CountUp
                       start={0}
@@ -125,7 +125,7 @@ const BusinessSummary = () => {
                     </CountUp>
                   )}
                 </div>
-                <div class="stat-title font-bold text-black">
+                <div className="stat-title font-bold text-black">
                   Customers Globally
                 </div>
               </div>

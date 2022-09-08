@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 import Loading from "../Shared/Loading";
 
 const LogIn = () => {
@@ -22,22 +23,23 @@ const LogIn = () => {
     useSignInWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [sendPasswordResetEmail, sending, err] =
     useSendPasswordResetEmail(auth);
+    const [token] = useToken(user || gUser);
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
   let signInError;
   useEffect(() => {
-    if (user || gUser) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [user, gUser, from, navigate]);
+  }, [token, from, navigate]);
   if (loading || gLoading) {
     return <Loading></Loading>;
   }
   if (error || gError) {
     signInError = (
       <p>
-        <small className="text-red-600">Error: {error.message}</small>
+        <small className="text-red-600">Error: {error?.message || gError?.message}</small>
       </p>
     );
   }
