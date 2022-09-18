@@ -1,5 +1,5 @@
 # Sura Tools
-## [Live Link](https://sura-tools.web.app/)[https://sura-tools.web.app/](https://sura-tools.web.app/)
+## [Live Link](https://sura-tools.web.app/): [https://sura-tools.web.app/](https://sura-tools.web.app/)
 
 ### `Features`
 ● It’s a kind of Tools Manufacturer Website. Here user can buy many electrical and mechanical tools. Users can see all products and services, they can sign in freely for creating their own profile. 
