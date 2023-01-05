@@ -6,7 +6,7 @@ import OrderRow from './OrderRow';
 
 const ManageProducts = () => {
     const [modal, setModal] = useState();
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://infinite-crag-41650.herokuapp.com/order', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://sura-tools.up.railway.app/order', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

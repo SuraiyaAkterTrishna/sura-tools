@@ -10,7 +10,7 @@ const ManageProducts = () => {
       "Are you sure You want to delete this Order?"
     );
     if (proceed) {
-      const url = `https://infinite-crag-41650.herokuapp.com/tool/${id}`;
+      const url = `https://sura-tools.up.railway.app/tool/${id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, email, name } = order;
 
     useEffect(() => {
-        fetch('https://infinite-crag-41650.herokuapp.com/create-payment-intent', {
+        fetch('https://sura-tools.up.railway.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -81,7 +81,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://infinite-crag-41650.herokuapp.com/order/${_id}`, {
+            fetch(`https://sura-tools.up.railway.app/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

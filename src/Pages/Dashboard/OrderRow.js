@@ -17,7 +17,7 @@ const OrderRow = ({ index, order, setModal, refetch }) => {
         const updatedOrder = {
             shipping: 'Shipped'
         }
-        fetch(`https://infinite-crag-41650.herokuapp.com/update-shipping/${id}`, {
+        fetch(`https://sura-tools.up.railway.app/update-shipping/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

@@ -7,7 +7,7 @@ const UserRow = ({ user, refetch, index }) => {
       role: 'admin'
   }
   // update user role
-  fetch(`https://infinite-crag-41650.herokuapp.com/create-user/${email}`, {
+  fetch(`https://sura-tools.up.railway.app/create-user/${email}`, {
       method: "PUT",
       headers: {
         'content-type': 'application/json',

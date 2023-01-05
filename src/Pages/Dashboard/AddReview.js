@@ -23,7 +23,7 @@ const AddReview = () => {
         ratting: data.ratting,
     }
     // send to database 
-    fetch('https://infinite-crag-41650.herokuapp.com/review', {
+    fetch('https://sura-tools.up.railway.app/review', {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
